@@ -9,7 +9,7 @@ function respond() {
   var nameRegex = /[Mm]y name is \w/;
   var spreadRegex = /!sheet/;
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text && nameRegex.test(request.text)) {
     this.res.writeHead(200);
     nameResponse();
     this.res.end();
