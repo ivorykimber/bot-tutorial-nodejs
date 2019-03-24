@@ -6,12 +6,17 @@ var request = "";
 
 function respond() {
   request = JSON.parse(this.req.chunks[0]);
-  var botRegex = /[Mm]y name is \w/;
+  var nameRegex = /[Mm]y name is \w/;
+  var spreadRegex = /!sheet/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    nameResponse();
     this.res.end();
+  } else if (request.text && spreadRegex.test(request.text)) {
+    this.res.writeHead(200);
+    sheetLink();
+    this.res.end();       
   } else {
     console.log("don't care");
     this.res.writeHead(200);
@@ -19,7 +24,23 @@ function respond() {
   }
 }
 
-function postMessage() {
+function sheetLink() {
+  var botResponse, options, body, botReq;
+
+  botResponse = "Here is the link: https://bit.ly/2FuzbPs";
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
+  };
+
+function nameResponse() {
   var botResponse, options, body, botReq;
 
   botResponse = "Hi " + request.text.substring(request.text.indexOf("s")+1, request.text.length) +"!";
