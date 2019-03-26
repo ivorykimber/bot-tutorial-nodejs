@@ -44,7 +44,7 @@ function berkeleyShade() {
     
   var temp = Math.random();
     
-  botResponse = "I see you're discussing Berkele! For more information, visit http://stanfordrejects.com/";
+  botResponse = "I see you're discussing Berkeley! For more information, visit http://stanfordrejects.com/";
     
   /*if(temp<0.05) {
       botResponse = "https://www.stanfordrejects.com/";
