@@ -45,19 +45,19 @@ function berkeleyShade() {
   var temp = Math.random();
     
   if(temp<0.05) {
-      botResponse = "Heads!"
+      botResponse = "https://www.stanforddaily.com/2019/02/26/mens-swimming-sinks-in-berkeley/";
   } else if (temp<0.167) {
-      botResponse = "https://www.stanforddaily.com/2019/02/26/mens-swimming-sinks-in-berkeley/"
+      botResponse = "https://www.stanforddaily.com/2019/02/26/mens-swimming-sinks-in-berkeley/";
   } else if (temp<0.333) {
-      botResponse = "https://www.stanforddaily.com/2019/02/04/mens-basketball-ices-berkeley-in-final-minutes-keeps-them-winless-in-pac-12/"
+      botResponse = "https://www.stanforddaily.com/2019/02/04/mens-basketball-ices-berkeley-in-final-minutes-keeps-them-winless-in-pac-12/";
   } else if (temp<0.5) {
-      botResponse = "https://www.stanforddaily.com/2014/05/21/center-for-human-rights-and-international-justice-moves-to-stanford/"
+      botResponse = "https://www.stanforddaily.com/2014/05/21/center-for-human-rights-and-international-justice-moves-to-stanford/";
   } else if (temp<0.66667) {
-      botResponse = "https://www.stanforddaily.com/2010/01/20/m-gymnastics-no-1-stanford-demolishes-cal-in-berkeley/"
+      botResponse = "https://www.stanforddaily.com/2010/01/20/m-gymnastics-no-1-stanford-demolishes-cal-in-berkeley/";
   } else if (temp<0.83333) {
-      botResponse = "https://www.mercurynews.com/2018/11/30/the-big-game-how-long-has-it-been-since-cal-beat-stanford/"
+      botResponse = "https://www.mercurynews.com/2018/11/30/the-big-game-how-long-has-it-been-since-cal-beat-stanford/";
   } else {
-      botResponse = "https://calbears.com/news/2018/12/1/football-bears-fall-to-stanford-in-121st-big-game.aspx"
+      botResponse = "https://calbears.com/news/2018/12/1/football-bears-fall-to-stanford-in-121st-big-game.aspx";
   } 
     
     /* else if (temp<0.35) {
