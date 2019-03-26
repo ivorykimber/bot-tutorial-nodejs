@@ -47,10 +47,6 @@ function flip() {
       botResponse = "Tails!"
   }
 
-  botResponse = "Sounds like you're asking about AP exams! Officially, Stanford recommends that students take all of the AP exams " +
-      "they originally signed up for. However, many admits have reported success emailing their admissions officers and asking if " +
-      "they could be excused from taking them. Stanford's website should have information on your regional admissions officer.";
-
   options = {
     hostname: 'api.groupme.com',
     path: '/v3/bots/post',
