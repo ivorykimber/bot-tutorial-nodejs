@@ -44,7 +44,9 @@ function berkeleyShade() {
     
   var temp = Math.random();
     
-  if(temp<0.05) {
+  botResponse = "http://stanfordrejects.com/";
+    
+  /*if(temp<0.05) {
       botResponse = "https://www.stanfordrejects.com/";
   } else if (temp<0.167) {
       botResponse = "https://www.stanforddaily.com/2019/02/26/mens-swimming-sinks-in-berkeley/";
@@ -58,7 +60,7 @@ function berkeleyShade() {
       botResponse = "https://www.mercurynews.com/2018/11/30/the-big-game-how-long-has-it-been-since-cal-beat-stanford/";
   } else {
       botResponse = "https://calbears.com/news/2018/12/1/football-bears-fall-to-stanford-in-121st-big-game.aspx";
-  } 
+  } */
     
     /* else if (temp<0.35) {
       botResponse = "Tails!"
