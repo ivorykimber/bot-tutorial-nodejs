@@ -28,7 +28,7 @@ function respond() {
     this.res.writeHead(200);
     apFAQ();
     this.res.end();
-  } else if (request.text && (request.text.indexOf("Berkeley") > -1 || request.text.indexOf("berkeley") > -1)) {
+  } else if (request.text && (request.text.indexOf("Berkeley") > -1 || request.text.indexOf("berkeley") > -1) && (request.text.indexOf("I see you're") < 0)) {
     this.res.writeHead(200);
     berkeleyShade();
     this.res.end();   
