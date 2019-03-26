@@ -49,6 +49,8 @@ function rando(tempTxt) {
     
   var txt = tempTxt.substring(tempTxt.indexOf("m"), tempTxt.length);
     
+  print(txt);
+    
   if(txt.length > 1) {
       var num = parseInt(txt.substring(1), txt.length);
       botResponse = Math.floor(Math.random() * num);
