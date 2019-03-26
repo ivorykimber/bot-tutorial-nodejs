@@ -9,6 +9,7 @@ function respond() {
   var nameRegex = /[Mm]y name is \w/;
   var spreadRegex = /!sheet/;
   var flipRegex = /!flip/;
+  var randRegex = /!dice [0123456789])/
 
   if(request.text && nameRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -32,11 +33,58 @@ function respond() {
     this.res.writeHead(200);
     berkeleyShade();
     this.res.end();   
-  }  else {
+  } else if (request.text && randRegex.test(request.text)) {
+    this.res.writeHead(200);
+    rando(request.text);
+    this.res.end();     
+  } else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
   }
+}
+
+function rando(tempTxt) {
+  var botResponse, options, body, botReq;
+    
+  var txt = tempTxt.substring(tempTxt.indexOf("m"), tempTxt.length);
+    
+  if(txt.length > 1) {
+      var num = parseInt(txt.substring(1), txt.length);
+      botResponse = Math.floor(Math.random() * num);
+  } else {
+      botResponse = Math.floor(Math.random() * 6);
+  }
+
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
+  };
+
+  console.log('sending ' + botResponse + ' to ' + botID);
+
+  botReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  botReq.end(JSON.stringify(body));
 }
 
 function berkeleyShade() {
