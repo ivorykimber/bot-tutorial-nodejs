@@ -45,7 +45,7 @@ function berkeleyShade() {
   var temp = Math.random();
     
   if(temp<0.05) {
-      botResponse = "https://www.stanforddaily.com/2019/02/26/mens-swimming-sinks-in-berkeley/";
+      botResponse = "https://www.stanfordrejects.com/";
   } else if (temp<0.167) {
       botResponse = "https://www.stanforddaily.com/2019/02/26/mens-swimming-sinks-in-berkeley/";
   } else if (temp<0.333) {
