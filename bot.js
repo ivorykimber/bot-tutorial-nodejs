@@ -8,6 +8,7 @@ function respond() {
   request = JSON.parse(this.req.chunks[0]);
   var nameRegex = /[Mm]y name is \w/;
   var spreadRegex = /!sheet/;
+  var flipRegex = /!sheet/;
 
   if(request.text && nameRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -17,12 +18,12 @@ function respond() {
     this.res.writeHead(200);
     sheetLink();
     this.res.end();       
-  } else if (request.text && spreadRegex.test(request.text)) {
+  } else if (request.text && flipRegex.test(request.text)) {
     this.res.writeHead(200);
     flip();
     this.res.end();     
   }  else if ((request.text.indexOf("AP ") > -1 || request.text.indexOf("ap ") > -1) && 
-            (request.text.indexOf("exams ") > -1 || request.text.indexOf("tests ") > -1 || request.text.indexOf("exam ") > -1 || request.text.indexOf("test ") > -1) &&
+            (request.text.indexOf("exams") > -1 || request.text.indexOf("tests") > -1 || request.text.indexOf("exam") > -1 || request.text.indexOf("test") > -1) &&
             request.text.indexOf("?") > 1) {
     this.res.writeHead(200);
     apFAQ();
