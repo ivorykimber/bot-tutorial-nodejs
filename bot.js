@@ -55,7 +55,7 @@ function rando(tempTxt) {
       var num = 1+ Math.floor(Math.random() * parseInt(txt.substring(1)));
       botResponse = num.toString();
   } else {
-      botResponse = Math.floor(Math.random() * 7).toString();
+      botResponse = (1 + Math.floor(Math.random() * 6)).toString();
   }
 
 
