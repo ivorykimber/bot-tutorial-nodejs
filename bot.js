@@ -47,7 +47,7 @@ function respond() {
 function rando(tempTxt) {
   var botResponse, options, body, botReq;
     
-  var txt = tempTxt.substring(tempTxt.indexOf("m"), tempTxt.length);
+  var txt = tempTxt.substring(tempTxt.indexOf("e"), tempTxt.length);
     
   console.log(txt);
     
