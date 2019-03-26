@@ -52,10 +52,10 @@ function rando(tempTxt) {
   console.log(txt);
     
   if(txt.length > 1) {
-      var num = Math.floor(Math.random() * parseInt(txt.substring(1)));
+      var num = 1+ Math.floor(Math.random() * parseInt(txt.substring(1)));
       botResponse = num.toString();
   } else {
-      botResponse = Math.floor(Math.random() * 6).toString();
+      botResponse = Math.floor(Math.random() * 7).toString();
   }
 
 
