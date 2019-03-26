@@ -9,7 +9,7 @@ function respond() {
   var nameRegex = /[Mm]y name is \w/;
   var spreadRegex = /!sheet/;
   var flipRegex = /!flip/;
-  var randRegex = /!dice [0123456789]*/
+  var randRegex = /!dice[\s]*[0123456789]*/
 
   if(request.text && nameRegex.test(request.text)) {
     this.res.writeHead(200);
