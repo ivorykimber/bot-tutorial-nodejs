@@ -8,7 +8,7 @@ function respond() {
   request = JSON.parse(this.req.chunks[0]);
   var nameRegex = /[Mm]y name is \w/;
   var spreadRegex = /!sheet/;
-  var flipRegex = /!sheet/;
+  var flipRegex = /!flip/;
 
   if(request.text && nameRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -49,7 +49,7 @@ function flip() {
 
   botResponse = "Sounds like you're asking about AP exams! Officially, Stanford recommends that students take all of the AP exams " +
       "they originally signed up for. However, many admits have reported success emailing their admissions officers and asking if " +
-      "they could be excused from taking them.";
+      "they could be excused from taking them. Stanford's website should have information on your regional admissions officer.";
 
   options = {
     hostname: 'api.groupme.com',
