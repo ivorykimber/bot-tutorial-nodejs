@@ -49,7 +49,7 @@ function rando(tempTxt) {
     
   var txt = tempTxt.substring(tempTxt.indexOf("e") + 1, tempTxt.length);
     
-  console.log(txt);
+  console.log("Made it");
     
   if(txt.length > 1) {
       var num = 1+ Math.floor(Math.random() * parseInt(txt.substring(1)));
