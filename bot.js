@@ -15,7 +15,7 @@ function respond() {
     
   if (request.text && (request.text.indexOf("!rd") == 0) {
     this.res.writeHead(200);
-    sender();
+    sender(request.text);
     this.res.end();
   } else if(request.text && nameRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -50,7 +50,7 @@ function respond() {
   }
 }
 
-function sender() {
+function sender(tempTxt) {
   var botResponse, options, body, botReq;
     
   botResponse = tempTxt.substring(tempTxt.indexOf("d") + 1, tempTxt.length);
