@@ -13,10 +13,13 @@ function respond() {
   var flipRegex = /!flip/;
   var randRegex = /!dice[\s]*[0123456789]*/
     
-  if (request.text && (request.text.indexOf("!rd") == 0)
-   else if(request.text && nameRegex.test(request.text)) {
+  if (request.text && (request.text.indexOf("!rd") == 0) {
     this.res.writeHead(200);
     sender();
+    this.res.end();
+  } else if(request.text && nameRegex.test(request.text)) {
+    this.res.writeHead(200);
+    nameResponse();
     this.res.end();
   } else if (request.text && spreadRegex.test(request.text)) {
     this.res.writeHead(200);
