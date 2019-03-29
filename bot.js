@@ -1,6 +1,8 @@
 var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
+
+var tarBotID = "a95772086d1748c8a418a06ba6";
     
 var request = "";
 
@@ -66,7 +68,7 @@ function rando(tempTxt) {
   };
 
   body = {
-    "bot_id" : botID,
+    "bot_id" : tarBotID,
     "text" : botResponse
   };
 
