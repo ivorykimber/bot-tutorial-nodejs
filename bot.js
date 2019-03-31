@@ -21,6 +21,10 @@ function respond() {
     this.res.writeHead(200);
     socialLink();
     this.res.end();
+  } else if(request.text && (request.text.indexOf("!creator") == 0)) {
+    this.res.writeHead(200);
+    creatorInfo();
+    this.res.end();
   } else if(request.text && nameRegex.test(request.text)) {
     this.res.writeHead(200);
     nameResponse();
@@ -52,6 +56,41 @@ function respond() {
     this.res.writeHead(200);
     this.res.end();
   }
+}
+
+function creatorInfo() {
+  var botResponse, options, body, botReq;
+
+  botResponse = "Hi, my name is Yasmine, and I am the creator of this bot! It is a consistent work-in-progress. I'd love to talk about it, so if you're curious feel free to dm me! (Also, my insta is @ivorykimber)";
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
+  };
+
+  console.log('sending ' + botResponse + ' to ' + botID);
+
+  botReq = HTTPS.request(options, function(res) {
+      if(res.statusCode == 202) {
+        //neat
+      } else {
+        console.log('rejecting bad status code ' + res.statusCode);
+      }
+  });
+
+  botReq.on('error', function(err) {
+    console.log('error posting message '  + JSON.stringify(err));
+  });
+  botReq.on('timeout', function(err) {
+    console.log('timeout posting message '  + JSON.stringify(err));
+  });
+  botReq.end(JSON.stringify(body));
 }
 
 function sender(tempTxt, name) {
