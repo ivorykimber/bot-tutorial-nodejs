@@ -26,9 +26,9 @@ function respond() {
     creatorInfo();
     this.res.end();
   } else if(request.text && nameRegex.test(request.text)) {
-    this.res.writeHead(200);
-    nameResponse();
-    this.res.end();
+    //this.res.writeHead(200);
+    //nameResponse();
+    //this.res.end();
   } else if (request.text && spreadRegex.test(request.text)) {
     this.res.writeHead(200);
     sheetLink();
